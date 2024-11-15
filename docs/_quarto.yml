@@ -1,0 +1,158 @@
+project:
+  type: book
+  output-dir: _build
+  preview:
+    port: 6829 # use the same port instead of a new one each time
+    browser: true
+
+# https://quarto.org/docs/books/
+# https://quarto.org/docs/reference/projects/books.html
+book:
+  title: "My Book Template"
+  author: "Michael J Rossetti"
+  date: "last-modified" # "7/24/2024"
+  date-format: "iso"
+  #doi: "...."
+  #isbn: "..."
+  #issn: "..."
+  #edition: "v2"
+
+  site-url: https://s2t2.github.io/quarto-book-template-2025
+  repo-url: https://github.com/s2t2/quarto-book-template-2025
+  repo-branch: main
+  repo-subdir: docs
+  repo-actions: [edit, issue, source]
+  #downloads: [pdf, epub, docx]
+
+  cover-image: images/my-banner.png
+  #favicon: favicon.ico
+
+  #sharing: [twitter, facebook]
+
+  # https://quarto.org/docs/websites/website-tools.html#open-graph
+  #open-graph: true
+
+  # https://quarto.org/docs/websites/website-tools.html#google-analytics
+  # doesn't work for github pages?
+  # see html: include-in-header option at bottom instead ..
+  # jk use tracking id as well?
+  # https://github.com/quarto-dev/quarto-cli/discussions/9065
+  #google-analytics:
+  #  tracking-id: "G-...."
+  # jk still doesn't work. see include-in-header option ...
+
+  # https://quarto.org/docs/reference/projects/books.html#search
+  search: #true
+    location: sidebar # navbar, sidebar
+    #type: textbox # overlay, textbox
+
+  #navbar:
+  #  right:
+  #    - href: exercises/index.qmd
+  #      text: "Exercises, Assignments, and Projects"
+  #    - about-author.qmd
+
+  # https://quarto.org/docs/websites/website-navigation.html#side-navigation
+  #sidebar:
+  #  logo: images/python-banner.jpeg
+
+  #page-footer:
+  #  left: |
+  #    Copyright 2024, <a href="https://prof-rossetti.org/">Michael J Rossetti</a>
+  #  right: |
+  #    This book was built with <a href="https://quarto.org/">Quarto</a>.
+
+
+
+  chapters:
+    - index.qmd
+    #- notes/predictive-modeling.qmd
+
+    #- part: "Machine Learning Foundations"
+    #  chapters:
+    #    - href: notes/ml-foundations/index.qmd
+    #      text: "Machine Learning Overview"
+    #
+    #    - href: notes/ml-foundations/generalization.qmd
+    #      text: "Generalization"
+    #
+    #    - href: notes/ml-foundations/data-encoding.qmd
+    #      text: "Data Encoding"
+    #
+    #    - href: notes/ml-foundations/data-scaling.qmd
+    #      text: "Data Scaling"
+
+
+    - "-----------------"
+    - about-author.qmd
+    - "-----------------"
+
+  #appendices:
+  #
+  #  - part: "Custom Functions In-Depth"
+  #    chapters:
+  #      - notes/python-lang/control-flow/function-docs.qmd
+  #      - notes/python-lang/control-flow/unit-testing.qmd
+
+
+  # shows up at bottom of page
+  #body-footer: "&copy; Copyright 2024, Your Name Here"
+
+  page-footer:
+    center: "&copy; Copyright 2024, Michael J Rossetti"
+
+
+bibliography: references.bib
+
+format:
+  html:
+    # https://quarto.org/docs/output-formats/html-themes.html
+    # https://bootswatch.com/
+    theme: minty
+      #light: default #flatly
+      #dark: darkly
+    #css: styles/my-style.css
+    code-copy: true
+    #code-fold: false #show
+    ##code-line-numbers: true
+    toc: true
+    #toc-depth: 4 # specify the number of section levels to include in the table of contents
+    toc-expand: true # show x levels initially
+    ##toc-location: left
+    ##number-sections: false
+    ##number-depth: 1
+
+    # https://quarto.org/docs/reference/formats/html.html#includes
+    #include-in-header:
+    #  text: |
+    #    <!-- Google tag (gtag.js) -->
+    #    <script async src="https://www.googletagmanager.com/gtag/js?id=G-...."></script>
+    #    <script>
+    #      window.dataLayer = window.dataLayer || [];
+    #      function gtag(){dataLayer.push(arguments);}
+    #      gtag('js', new Date());
+    #
+    #      gtag('config', 'G-....');
+    #    </script>
+
+  # THIS IS NOT WORKING YET ON GITHUB ACTIONS
+  #pdf:
+  #  documentclass: scrreprt
+  #
+  #epub:
+  #  toc: true # include a table of contents
+  #  cover-image: images/predictive-modeling-book-banner.png
+  #  number-sections: true # number the sections
+  #  #css: "custom-epub.css"
+  #  embed-fonts: true
+  #  metadata:
+  #    identifier: "urn:isbn:1234567890" # replace with actual ISBN or identifier
+  #    publisher: "Publisher Name"
+  #    rights: "© 2024 Your Name. All rights reserved."
+  #
+  #docx:
+  #  #reference-doc: "custom-reference.docx" # optional reference document for styling
+  #  number-sections: true # number the sections
+  #  toc: true # include a table of contents
+  #  toc-depth: 2 # control depth of table of contents
+  #  embed-fonts: true # embed fonts in the DOCX
